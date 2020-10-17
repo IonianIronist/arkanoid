@@ -6,4 +6,5 @@ classic arkanoid game in pygame
 - pygame 
 
 on linux : sudo pip3 install pygame
+
 on windows : pip install pygame
