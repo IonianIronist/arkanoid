@@ -1,4 +1,5 @@
 import pygame
+import functions
 
 class Player():
     def __init__(self, screen):
@@ -12,8 +13,14 @@ class Player():
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom - 20
         self.paused = True
+        self.lives = 3
 
-
+    def reduce_life(self, ball):
+        self.lives -= 1
+        if self.lives == 0:
+            functions.game_over(self, ball)
+               
+    
     def blitme(self):
         self.screen.blit(self.image, self.rect)
 
