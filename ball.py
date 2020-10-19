@@ -30,9 +30,13 @@ class Ball():
                     self.speed[1] = - self.speed[1]
                 block.decrese_life()
         if self.rect.right > self.screen_rect.right or self.rect.left < self.screen_rect.left:
-                    self.speed[0] = - self.speed[0]         
-        if self.rect.top < self.screen_rect.top or self.rect.bottom > self.screen_rect.bottom:
-                    self.speed[1] = - self.speed[1]
+            self.speed[0] = - self.speed[0]         
+        if self.rect.top < self.screen_rect.top:
+            self.speed[1] = - self.speed[1]
+        elif self.rect.bottom > self.screen_rect.bottom:
+            self.speed[1] = - self.speed[1]
+            player.reduce_life(self)
+                    
         if self.rect.colliderect(player.rect):
             if self.rect.centerx > player.rect.centerx:
                 self.speed[0] , self.speed[1] = 2, -2
