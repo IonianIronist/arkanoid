@@ -1,8 +1,0 @@
-import settings
-
-class Brick:
-    def __init__():
-        
-        # texture
-        self.color= settiongs.red
-        self.visible = True
